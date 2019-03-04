@@ -6,3 +6,4 @@ gem "github-pages", '163', group: :jekyll_plugins
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'jekyll-paginate'
 gem "nokogiri", ">= 1.8.5"
+gem 'jekyll-tagging'

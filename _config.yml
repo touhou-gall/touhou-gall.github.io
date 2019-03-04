@@ -150,7 +150,8 @@ paginate: 5
 
 kramdown:
   input: GFM
-
+tag_page_layout: tag_page
+tag_page_dir: tag
 # Default YAML values (more information on Jekyll's site)
 collections:
   tags:
