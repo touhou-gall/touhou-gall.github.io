@@ -42,11 +42,15 @@ filename=filename+'-'+title+'.md'
 fp=codecs.open('_posts/'+filename,'w',encoding='utf8')
 fp.write('---\ntitle:  \"'+title+'\"\ntags: '+tags+'\n---\n')
 filelist=Imagefiles(filepath)
+foldername=filepath.split('\\')[-1]
+try:
+    os.makedirs("content/"+foldername)
+except:
+    pass
 for i in filelist:
     filename=i.split('\\')[-1]
-    shutil.copy(i,"content")
-    print('[image](../content/'+filename+')\n')
-    fp.write('![image](../content/'+filename+')\n')
+    shutil.copy(i,"content/"+foldername+'/'+filename)
+    fp.write('![image](../content/'+foldername+'/'+filename+')\n')
     
 fp.close()
 
