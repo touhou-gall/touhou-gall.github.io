@@ -152,6 +152,11 @@ kramdown:
   input: GFM
 
 # Default YAML values (more information on Jekyll's site)
+collections:
+  tags:
+    output: true
+    permalink: /tags/:path/
+  
 defaults:
   -
     scope:
@@ -167,6 +172,12 @@ defaults:
     values:
       layout: "page"
       show-avatar: true
+  -
+    scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
 
 # Use tags index page and make tags on each post clickable
 link-tags: true
