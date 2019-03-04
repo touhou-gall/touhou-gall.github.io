@@ -1,6 +1,7 @@
 from datetime import datetime
 import os
 import shutil
+import codecs
 def Imagefiles(path):
     res = []
     exef=["jpg","png","gif","JPG","PNG","GIF"]
@@ -23,28 +24,29 @@ tags=input("입력할 태그를 입력하세요. (입력방식: 마리사, 앨�
 title=input("제목을 입력하세요. ")
 
 tags_=tags.split(', ')
-fp = open('tags_list.txt','r')
+fp = codecs.open('tags_list.txt','r',encoding='utf8')
 have_tags=fp.read().split('\r\n')
 fp.close()
 for tag in tags_:
     if tag in have_tags:
         pass
     else :
-        fp=open('tags_list.txt','a')
+        fp=codecs.open('tags_list.txt','a',encoding='utf8')
         fp.write('\n'+tag)
         fp.close()
-        fp=open('_tags/'+tag+'.md','w')
-        fp.write(("---\nname: "+tag+"\ntitle: "+tag+"\nimage: /files/covers/opensource.jpg\n---\n").encode('utf-8').decode('utf-8'))
+        fp=codecs.open('_tags/'+tag+'.md','w',encoding='utf8')
+        fp.write(("---\nname: "+tag+"\ntitle: "+tag+"\nimage: /files/covers/codecs.opensource.jpg\n---\n").encode('utf-8').decode('utf-8'))
         fp.close()
 filename='%4d-%02d-%02d' % ( now.year, now.month, now.day)
 filename=filename+'-'+title+'.md'
-fp=open('_posts/'+filename,'w')
+fp=codecs.open('_posts/'+filename,'w',encoding='utf8')
 fp.write('---\ntitle:  \"'+title+'\"\ntags: '+tags+'\n---\n')
 filelist=Imagefiles(filepath)
 for i in filelist:
     filename=i.split('\\')[-1]
     shutil.copy(i,"content")
-    fp.write('[image](\"../content/'+filename+'\")\n')
+    print('[image](..\\content\\'+filename+')\n')
+    fp.write('[image](\"..\\content\\'+filename+'\")\n')
     
 fp.close()
 
