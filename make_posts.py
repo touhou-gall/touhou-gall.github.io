@@ -22,8 +22,8 @@ tags=input("입력할 태그를 입력하세요. (입력방식: 마리사, 앨�
 title=input("제목을 입력하세요. ")
 
 tags_=tags.split(', ')
-fp = open('tags_list.txt','rb')
-have_tags=fp.read().split(b'\r\n')
+fp = open('tags_list.txt','r')
+have_tags=fp.read().split('\r\n')
 fp.close()
 for tag in tags_:
     if tag in have_tags:
@@ -32,17 +32,17 @@ for tag in tags_:
         fp=open('tags_list.txt','a')
         fp.write('\n'+tag)
         fp.close()
-        fp=open('_tags'+tag+'.md','w')
-        fp.write("---\nname: "+tag+"\ntitle: "+tag+"\nimage: /files/covers/opensource.jpg\n---\n")
+        fp=open('_tags/'+tag+'.md','w')
+        fp.write(("---\nname: "+tag+"\ntitle: "+tag+"\nimage: /files/covers/opensource.jpg\n---\n").encode('utf-8').decode('utf-8'))
         fp.close()
 filename='%4d-%02d-%02d' % ( now.year, now.month, now.day)
-filename=filename+'-'+title
-fp=open(filename,'w')
+filename=filename+'-'+title+'.md'
+fp=open('_posts/'+filename,'w')
 fp.write('---\ntitle:  \"'+title+'\ntags: '+tags+'\n---\n')
 filelist=Imagefiles(filepath)
-filelist.sort()
 for i in filelist:
-    fp.write('[image](\"'+i+'\")\n')
+    filename=i.split('\\')[-1]
+    fp.write('[image](\"../content/'+filename+'\")\n')
 fp.close()
 
 """
