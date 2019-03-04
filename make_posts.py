@@ -1,5 +1,6 @@
 from datetime import datetime
 import os
+import shutil
 def Imagefiles(path):
     res = []
     exef=["jpg","png","gif","JPG","PNG","GIF"]
@@ -38,11 +39,13 @@ for tag in tags_:
 filename='%4d-%02d-%02d' % ( now.year, now.month, now.day)
 filename=filename+'-'+title+'.md'
 fp=open('_posts/'+filename,'w')
-fp.write('---\ntitle:  \"'+title+'\ntags: '+tags+'\n---\n')
+fp.write('---\ntitle:  \"'+title+'\"\ntags: '+tags+'\n---\n')
 filelist=Imagefiles(filepath)
 for i in filelist:
     filename=i.split('\\')[-1]
+    shutil.copy(i,"content")
     fp.write('[image](\"../content/'+filename+'\")\n')
+    
 fp.close()
 
 """
