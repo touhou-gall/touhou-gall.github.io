@@ -46,7 +46,7 @@ for i in filelist:
     filename=i.split('\\')[-1]
     shutil.copy(i,"content")
     print('[image](../content/'+filename+')\n')
-    fp.write('[image](../content/'+filename+')\n')
+    fp.write('![image](../content/'+filename+')\n')
     
 fp.close()
 
