@@ -160,6 +160,12 @@ collections:
 defaults:
   -
     scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+  -
+    scope:
       path: ""
       type: "posts"
     values:
@@ -172,12 +178,6 @@ defaults:
     values:
       layout: "page"
       show-avatar: true
-  -
-    scope:
-      path: ''
-      type: tags
-    values:
-      layout: tag
 
 # Use tags index page and make tags on each post clickable
 link-tags: true
