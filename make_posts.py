@@ -20,10 +20,10 @@ def Imagefiles(path):
     return res
 now = datetime.now()
 filepath=input("이미지 폴더 위치 입력하세요. ")
-tags=input("입력할 태그를 입력하세요. (입력방식: 마리사, 앨리스, 레이무)")
+tags=input("입력할 태그를 입력하세요. (입력방식: 마리사 앨리스 레이무)")
 title=input("제목을 입력하세요. ")
 
-tags_=tags.split(', ')
+tags_=tags.split(' ')
 fp = codecs.open('tags_list.txt','r',encoding='utf8')
 have_tags=fp.read().split('\r\n')
 fp.close()
