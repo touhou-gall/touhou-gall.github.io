@@ -43,7 +43,7 @@ fp=codecs.open('_posts/'+filename,'w',encoding='utf8')
 filelist=Imagefiles(filepath)
 filename=filelist[0].split('\\')[-1]
 foldername=filepath.split('\\')[-1]
-fp.write('---\ntitle:  '+title+'\ntags: '+tags+'\n'+'image: content/'+foldername+'/'+filename+'\n'+'avatar: ../img/reimu.png\n'+'---\n')
+fp.write('---\ntitle:  '+title+'\ntags: '+tags+'\n'+'image: ../content/'+foldername+'/'+filename+'\n'+'---\n')
 filelist=Imagefiles(filepath)
 foldername=filepath.split('\\')[-1]
 try:
