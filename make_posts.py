@@ -25,7 +25,7 @@ title=input("제목을 입력하세요. ")
 
 tags_=tags.split(' ')
 fp = codecs.open('tags_list.txt','r',encoding='utf8')
-have_tags=fp.read().split('\r\n')
+have_tags=fp.read().split('\n')
 fp.close()
 for tag in tags_:
     if tag in have_tags:
