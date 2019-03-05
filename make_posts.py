@@ -40,7 +40,10 @@ for tag in tags_:
 filename='%4d-%02d-%02d' % ( now.year, now.month, now.day)
 filename=filename+'-'+title+'.md'
 fp=codecs.open('_posts/'+filename,'w',encoding='utf8')
-fp.write('---\ntitle:  '+title+'\ntags: '+tags+'\n---\n')
+filelist=Imagefiles(filepath)
+filename=filelist[0].split('\\')[-1]
+foldername=filepath.split('\\')[-1]
+fp.write('---\ntitle:  '+title+'\ntags: '+tags+'\n'+'image: content/'+foldername+'/'+filename+'\n---\n')
 filelist=Imagefiles(filepath)
 foldername=filepath.split('\\')[-1]
 try:
