@@ -12,7 +12,7 @@ baseurl: ""
 #baseurl: "/projectname"
 
 # Of course don't forget to change the username and projectname to YOUR username and project
-
+disqus_shortname: touhou-gall
 # Name of website
 title: "Touhou Dongjin"
 
