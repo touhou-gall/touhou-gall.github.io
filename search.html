@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 page_title: Search
 permalink: /search/
 ---
