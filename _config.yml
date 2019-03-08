@@ -25,6 +25,7 @@ description: "동방 동인지 정리 하는곳."
 navbar-links:
   About Us: "aboutus"
   Tags: "tags"
+  search: "search"
 
     
 
