@@ -41,10 +41,10 @@ layout: base
           Tags:
           {% if site.link-tags %}
           {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
+            <a href="{{ site.baseurl }}/tags/{{- tag -}}">{{- tag -}}</a>
           {% endfor %}
           {% else %}
-            {{ page.tags | join: ", " }}
+            {{ page.tags | join: " " }}
           {% endif %}
         </div>
       {% endif %}
